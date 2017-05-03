@@ -16,7 +16,7 @@ import javax.persistence.Id;
  * @author guilherme
  */
 @Entity
-class Nota {
+public class Nota {
 
     @Id
     @GeneratedValue
