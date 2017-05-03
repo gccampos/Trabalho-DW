@@ -5,8 +5,8 @@
  */
 package com.trabalhoDW.controller;
 
-import com.trabalhoDW.model.Avaliacao;
-import com.trabalhoDW.service.AvaliacaoService;
+import com.trabalhoDW.model.Usuario;
+import com.trabalhoDW.service.UsuarioService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,20 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author guilherme
+ * @author root
  */
 @RestController
-public class AvaliacaoBean {
+public class UsuarioBean {
     @Autowired
-    private AvaliacaoService avaliacaoService;
+    private UsuarioService usuarioService;
     
-    @RequestMapping("/avaliacaoConhecido")
-    public List<Avaliacao> avaliacaoConhecido(){
-        return avaliacaoService.listarTodos();
-    } 
-    @RequestMapping("/avaliacaoHospedagem")
-    public List<Avaliacao> avaliacaoHospedagem(){
-        return avaliacaoService.listarTodos();
-    } 
-
+    @RequestMapping ("/usuario")
+    public List<Usuario> usuarios() {
+        return usuarioService.listarTodos();
+    }
 }
