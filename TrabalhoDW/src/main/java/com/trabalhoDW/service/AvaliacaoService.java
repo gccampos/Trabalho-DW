@@ -8,6 +8,7 @@ package com.trabalhoDW.service;
 import com.trabalhoDW.model.Avaliacao;
 import com.trabalhoDW.persistence.AvaliacaoDAO;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,7 +17,8 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class AvaliacaoService {
-
+    
+    @Autowired
     private AvaliacaoDAO avaliacaoDAO;
 
     public Avaliacao buscarPorId(int id) {
@@ -31,8 +33,4 @@ public class AvaliacaoService {
         avaliacaoDAO.saveAndFlush(avaliacao);
     }
     
-
-
-    
-
 }

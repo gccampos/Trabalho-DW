@@ -5,7 +5,6 @@
  */
 package com.trabalhoDW.model;
 
-import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,7 +20,9 @@ public class Nota {
     @Id
     @GeneratedValue
     private int id;
+    
     private List<Long> notaConhecido;
+    
     private List<Long> notaHospedagem;
     
     public int getId() {
