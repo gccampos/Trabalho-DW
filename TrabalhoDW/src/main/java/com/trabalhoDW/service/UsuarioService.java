@@ -5,6 +5,7 @@
  */
 package com.trabalhoDW.service;
 
+import com.trabalhoDW.model.Esporte;
 import com.trabalhoDW.model.Usuario;
 import com.trabalhoDW.persistence.UsuarioDAO;
 import java.util.List;
@@ -20,18 +21,29 @@ public class UsuarioService {
     private UsuarioDAO usuarioDAO;
 
     public Usuario buscarPorId(int id) {
+
         return usuarioDAO.findOne();
+    }
+
+    public void aaa() {
+        Usuario u = new Usuario();
+        u.setDisponivel(true);
+        u.setEmail("email@email.com");
+        u.setEndereco("123");
+        Esporte esporte;
+        u.setEsporteFavorito(esporte = new Esporte());
+        u.setNome("fodac");
+        u.setTelefone(1234567890);
+        this.salvar(u);
+
     }
 
     public List<Usuario> listarTodos() {
         return usuarioDAO.findAll();
     }
-    public void salvar(Usuario usuario){
+
+    public void salvar(Usuario usuario) {
         usuarioDAO.saveAndFlush(usuario);
     }
-    
-
-
-    
 
 }

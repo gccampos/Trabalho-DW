@@ -23,6 +23,7 @@ public class UsuarioBean {
     
     @RequestMapping ("/usuario")
     public List<Usuario> usuarios() {
+        usuarioService.aaa();
         return usuarioService.listarTodos();
     }
 }
