@@ -9,7 +9,6 @@ import com.trabalhoDW.model.Avaliacao;
 import com.trabalhoDW.service.AvaliacaoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,16 +18,17 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class AvaliacaoBean {
+    
     @Autowired
     private AvaliacaoService avaliacaoService;
     
-    @RequestMapping("/avaliacaoConhecido")
+    @RequestMapping ("/avaliacaoConhecido")
     public List<Avaliacao> avaliacaoConhecido(){
         return avaliacaoService.listarTodos();
     } 
     @RequestMapping("/avaliacaoHospedagem")
     public List<Avaliacao> avaliacaoHospedagem(){
         return avaliacaoService.listarTodos();
-    } 
+        } 
 
 }
