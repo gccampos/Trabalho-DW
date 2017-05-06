@@ -9,6 +9,7 @@ import com.trabalhoDW.model.Esporte;
 import com.trabalhoDW.model.Usuario;
 import com.trabalhoDW.persistence.UsuarioDAO;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UsuarioService {
 
+    @Autowired
     private UsuarioDAO usuarioDAO;
 
     public Usuario buscarPorId(int id) {
