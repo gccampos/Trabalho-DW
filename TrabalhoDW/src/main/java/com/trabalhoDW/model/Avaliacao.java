@@ -25,7 +25,7 @@ public class Avaliacao {
     @Autowired
     private Usuario usuario;
     
-    @OneToOne
+    @OneToOne(targetEntity=Nota.class)
     @Autowired
     private Nota nota;
 

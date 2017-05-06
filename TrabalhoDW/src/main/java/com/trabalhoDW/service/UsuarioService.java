@@ -21,24 +21,27 @@ public class UsuarioService {
 
     @Autowired
     private UsuarioDAO usuarioDAO;
+    //@Autowired
+    //EsporteService esporteService;
 
     public Usuario buscarPorId(int id) {
 
-        return usuarioDAO.findOne();
+        return usuarioDAO.findOne(id);
     }
 
-    public void aaa() {
+    /*public void aaa() {
         Usuario u = new Usuario();
         u.setDisponivel(true);
         u.setEmail("email@email.com");
         u.setEndereco("123");
-        Esporte esporte;
-        u.setEsporteFavorito(esporte = new Esporte());
+        Esporte esporte = new Esporte();
+        esporteService.salvar(esporte);
+        u.setEsporteFavorito(esporte);
         u.setNome("fodac");
         u.setTelefone(1234567890);
         this.salvar(u);
 
-    }
+    }*/
 
     public List<Usuario> listarTodos() {
         return usuarioDAO.findAll();

@@ -8,6 +8,7 @@ package com.trabalhoDW.service;
 import com.trabalhoDW.model.Esporte;
 import com.trabalhoDW.persistence.EsporteDAO;
 import java.util.List;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +29,7 @@ public class EsporteService {
     public List<Esporte> listarTodos() {
         return esporteDAO.findAll();
     }
+    @Transactional
     public void salvar(Esporte esporte){
         esporteDAO.saveAndFlush(esporte);
     }

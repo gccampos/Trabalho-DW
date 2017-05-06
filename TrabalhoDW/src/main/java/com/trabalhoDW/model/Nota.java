@@ -6,6 +6,7 @@
 package com.trabalhoDW.model;
 
 import java.util.List;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -21,9 +22,11 @@ public class Nota {
     @GeneratedValue
     private int id;
     
-    private List<Long> notaConhecido;
+    @ElementCollection(targetClass=Double.class)
+    private List<Double> notaConhecido;
     
-    private List<Long> notaHospedagem;
+    @ElementCollection(targetClass=Double.class)
+    private List<Double> notaHospedagem;
     
     public int getId() {
         return id;
@@ -33,27 +36,23 @@ public class Nota {
         this.id = id;
     }
 
-    public long getNotaConhecido() {
-        long media = 0;
-        for (long nota : notaConhecido) {
-            media += nota;
-        }
+    public double getNotaConhecido() {
+        double media = 0;
+        media = notaConhecido.stream().map((nota) -> nota).reduce(media, (accumulator, _item) -> accumulator + _item);
         return media / notaConhecido.size();
     }
 
-    public void setNotaConhecido(long nota) {
+    public void setNotaConhecido(double nota) {
         this.notaConhecido.add(nota);
     }
 
-    public long getNotaHospedagem() {
-        long media = 0;
-        for (long nota : notaHospedagem) {
-            media += nota;
-        }
+    public double getNotaHospedagem() {
+        double media = 0;
+        media = notaHospedagem.stream().map((nota) -> nota).reduce(media, (accumulator, _item) -> accumulator + _item);
         return media / notaHospedagem.size();
     }
 
-    public void setNotaHospedagem(long nota) {
+    public void setNotaHospedagem(double nota) {
         this.notaHospedagem.add(nota);
     }
 

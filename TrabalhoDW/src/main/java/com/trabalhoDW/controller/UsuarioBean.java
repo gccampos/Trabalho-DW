@@ -22,8 +22,13 @@ public class UsuarioBean {
     private UsuarioService usuarioService;
     
     @RequestMapping ("/usuario")
+    public Usuario usuario(int id) {
+        return usuarioService.buscarPorId(id);
+    }
+    
+    @RequestMapping ("/usuarios")
     public List<Usuario> usuarios() {
-        usuarioService.aaa();
+      //usuarioService.aaa();
         return usuarioService.listarTodos();
     }
 }
