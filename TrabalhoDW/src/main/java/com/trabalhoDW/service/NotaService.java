@@ -8,6 +8,7 @@ package com.trabalhoDW.service;
 import com.trabalhoDW.model.Nota;
 import com.trabalhoDW.persistence.NotaDAO;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class NotaService {
 
+    @Autowired
     private NotaDAO notaDAO;
 
     public Nota buscarPorId(int id) {
